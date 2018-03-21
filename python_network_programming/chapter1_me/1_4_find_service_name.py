@@ -1,0 +1,18 @@
+#!/usr/bin/env python
+# coding:utf-8
+# Python Network Programming Cookbook -- Chapter - 1 P6
+# This program is optimized for Python 2.7.
+# It may run on any other version with/without modifications.
+
+import socket
+
+def find_service_name():
+    protocolname = 'tcp'
+    for port in [80,25]:
+        print "Port: %s => service  name: %s" %(port,socket.getservbyport(port,protocolname))
+    print "Port: %s => server  name: %s" %(53,socket.getservbyport(53,'udp'))
+
+if __name__ == '__main__':
+    find_service_name()
+
+
